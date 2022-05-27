@@ -1,0 +1,27 @@
+{% extends 'portfolio/layout.html' %}
+
+{% block main %}
+	<section class="head">
+        <div class="content">
+            <h2 class="title">Blog</h2>
+            <span class="subtitle">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
+        </div>
+    </section>
+
+    
+        <section class="post container">
+           	        {% for post in posts %}
+                   <div class="post-box">
+                     <img class="post-img" src="../../static/portfolio/images/{{ post.imagem }}" alt="">
+           <h2 class="category">{{ post.autor }}</h2>
+             <a href="{{ post.link}}" class="post-title">{{ post.titulo }}</a>
+            <span class="post-date">{{ post.data}}</span>
+            <p class="post-description">{{ post.descricao }}</p>
+            <a href="{% url 'portfolio:editar' post.id %}" class="btn btn-warning  btn-sm" style="float: right; margin-right: 10px">Editar</a>
+            </div>
+        
+            {% endfor %}
+    </section>
+    <a href="{% url 'portfolio:criar' %}" class="btn btn-success btn-block">+ Nova Tarefa</a>
+    
+{% endblock %}

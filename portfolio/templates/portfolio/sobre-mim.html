@@ -1,0 +1,112 @@
+{% extends 'portfolio/layout.html' %}
+
+
+{% block main %}
+<section class="head">
+    <div class="content">
+        <h2 class="title">Sobre mim</h2>
+        <span class="subtitle">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
+    </div>
+</section>
+
+<section class="title"> 
+    <h2>Cadeiras</h2> 
+</section>
+<div id="myBtnContainer">
+    <div class="filtro-principal">
+        <button class="btn active" onclick="filterSelection('ano1')"> 1º ano</button>
+        <button class="btn" onclick="filterSelection('ano2')"> 2º ano</button>
+        <button class="btn" onclick="filterSelection('ano3')"> 3º ano</button>
+    </div>
+    
+    <div class="filtro-secundario">
+        <button class="btn filterDiv ano1 ano1sem1 ano1sem2" onclick="filterSelection('ano1sem1')"> 1º Semestre</button>
+        <button class="btn filterDiv ano1 ano1sem1 ano1sem2" onclick="filterSelection('ano1sem2')"> 2º Semestre</button>
+    </div>
+    <div class="filtro-secundario">
+        <button class="btn filterDiv ano2 ano2sem1 ano2sem2" onclick="filterSelection('ano2sem1')"> 1º Semestre</button>
+        <button class="btn filterDiv ano2 ano2sem1 ano2sem2" onclick="filterSelection('ano2sem2')"> 2º Semestre</button>
+    </div>
+    <div class="filtro-secundario">
+        <button class="btn filterDiv ano3 ano3sem1 ano3sem2" onclick="filterSelection('ano3sem1')"> 1º Semestre</button>
+        <button class="btn filterDiv ano3 ano3sem1 ano3sem2" onclick="filterSelection('ano3sem2')"> 2º Semestre</button>
+    </div>
+</div>
+
+<div class="container cadeiras">
+    {% for cadeira in cadeiras %}
+    <div class="card filterDiv {{cadeira.anoLectivo}} {{cadeira.anoLectivo}}{{cadeira.semestre}}">
+        <div class="face face1">
+            <div class="content">
+                <h3>{{cadeira.nome}}</h3>
+            </div>
+        </div>
+        <div class="face face2">
+            <div class="content">
+                <p>{{cadeira.topicosAbordados}}</p>
+                    <a href="{{cadeira.link}}">Saber Mais</a>
+            </div>
+        </div>
+    </div>
+
+    {% endfor %}
+</div>
+
+<section class="title"> 
+    <h2>Educação</h2> 
+</section>
+
+<section class="about-section">
+    {% for curso in educacao %}
+    <div class="caixa">
+        <img src="../../static/portfolio/images/{{curso.imagem}}" alt="" width="80">
+        <h2 class="curso">{{curso.curso}}</h2>
+        <h4 class="local">{{curso.local}}</h4>
+        <span class="data">{{curso.inicio}} - {{curso.fim}}</span>
+    </div>
+    {% endfor %}
+</section>
+
+<section class="title"> 
+    <h2>Competências</h2> 
+</section>
+<section class="about-section">
+    {% for competencia in competencias %}
+    <div class="caixa">
+        <h2 class="titulo">{{competencia.titulo}}</h2>
+        <h5 class="descricao">{{competencia.descricao}}</h5>
+        <h5 class="projetos">{{competencia.projetos}}</h5>
+        <span class="disciplinas">{{competencia.disciplinas}}</span>
+    </div>
+    {% endfor %}
+</section>
+
+<section class="title"> 
+    <h2>Linguas</h2> 
+</section>
+<section class="about-section">
+    {% for lingua in linguas %}
+    <div class="caixa">
+        <h2 class="nome">{{lingua.nome}}</h2>
+        <h5 class="nivel">{{lingua.nivel}}</h5>
+    </div>
+    {% endfor %}
+</section>
+
+<section class="title"> 
+    <h2>Interesses</h2> 
+</section>
+<section class="about-section">
+    {% for interesse in interesses %}
+    <div class="caixa">
+        <a href="{{cadeira.link}}">
+        <img src="../../static/portfolio/images/{{interesse.imagem}}" alt="" width="80">
+        <h2 class="titulo">{{interesse.titulo}}</h2>
+        <p class="descricao">{{interesse.descricao}}</p>
+        <h5 class="nivel">{{interesse.nivel}}</h5>
+    </a>
+    </div>
+    {% endfor %}
+</section>
+
+{% endblock %}

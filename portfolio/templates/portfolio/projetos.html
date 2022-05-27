@@ -1,0 +1,24 @@
+{% extends 'portfolio/layout.html' %}
+
+{% block main %}
+<section class="head">
+    <div class="content">
+        <h2 class="title">Projetos</h2>
+        <span class="subtitle">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
+    </div>
+</section>
+
+<section class="post container">
+    {% for projeto in projetos %}
+<div class="post-box">
+  <img class="post-img" src="../../static/portfolio/images/{{ projeto.imagem }}" alt="">
+<!-- <h2 class="category">{{ projeto.autor }}</h2> -->
+<a href="{{ post.link}}" class="post-title">{{ projeto.titulo }}</a>
+<span class="post-date">{{ projeto.ano }}</span>
+<p class="post-description">{{ projeto.descricao }}</p>
+</div>
+
+{% endfor %}
+</section>
+    
+{% endblock %}

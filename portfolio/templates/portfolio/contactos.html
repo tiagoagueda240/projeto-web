@@ -1,0 +1,60 @@
+{% extends 'portfolio/layout.html' %}
+
+{% block main %}
+<section class="head">
+    <div class="content">
+        <h2 class="title">Contactos</h2>
+        <span class="subtitle">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
+    </div>
+</section>
+
+<div class = "contact-body">
+    <div class = "contact-info">
+      <div>
+          <a href="#">
+        <span><i class="fa-brands fa-github-square"></i></span>
+        <span>Github</span>
+        <span class = "text"></span>
+    </a>
+      </div>
+      <div>
+          <a href="#">
+        <span><i class = "fas fa-envelope-open"></i></span>
+        <span>E-mail</span>
+        <span class = "text"></span>
+            </a>
+      </div>
+      <div>
+          <a href="#">
+        <span><i class="fa-brands fa-linkedin"></i></span>
+        <span>LinkedIn</span>
+        <span class = "text"></span>
+    </a>
+      </div>
+    </div>
+
+    <div class = "contact-form">
+      <form>
+        <div>
+          <input type = "text" class = "form-control" placeholder="Nome">
+          <input type = "text" class = "form-control" placeholder="Apelido">
+        </div>
+        <div>
+          <input type = "email" class = "form-control" placeholder="E-mail">
+          <input type = "text" class = "form-control" placeholder="Contacto telefónico">
+        </div>
+        <textarea rows = "5" placeholder="Menssagem" class = "form-control"></textarea>
+        <input type = "submit" class = "send-btn" value = "Enviar">
+      </form>
+
+      <div>
+        {% load static %}
+        <img src = "{% static 'portfolio/images/imagem_contactos.svg' %}" alt = "">
+      </div>
+    </div>
+  </div>
+
+  <div class = "map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d49789.95973349951!2d-9.195222626085295!3d38.7436883209176!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd19331a61e4f33b%3A0x400ebbde49036d0!2sLisboa!5e0!3m2!1spt-PT!2spt!4v1652730292683!5m2!1spt-PT!2spt" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+  </div>
+{% endblock %}

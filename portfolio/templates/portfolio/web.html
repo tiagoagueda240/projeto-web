@@ -1,0 +1,82 @@
+{% extends 'portfolio/layout.html' %}
+
+{% block main %}
+<section class="head">
+    <div class="content">
+        <h2 class="title">Web</h2>
+        <span class="subtitle">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
+    </div>
+</section>
+
+<section class="title"> 
+    <h2>Tecnologias</h2> 
+</section>
+<section class="tecnologias">
+    <div class="conteudos-tecnologias">
+        {% for tecnologia in tecnologias %}
+        <div class="tecnologia"><a href="{{tecnologia.link}}">
+            <img src="../../static/portfolio/images/{{tecnologia.logo}}" alt="" width="100">
+            <h4 class="nome">{{tecnologia.acronimo}}<br>{{tecnologia.nome}}</h4>
+            <span class="ano">{{tecnologia.ano}}</span>
+            <span class="criador">{{tecnologia.criador}}</span>
+            <p class="descricao">{{tecnologia.descricao}}</p>
+        </a>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<section class="title"> 
+    <h2>Laboratórios</h2> 
+</section>
+<section class="tecnologias">
+    <div class="conteudos-tecnologias">
+        {% for laboratorio in laboratorios %}
+        <div class="tecnologia"><a href="{{laboratorio.link}}">
+            <h4 class="nome">{{laboratorio.titulo}}</h4>
+            <p class="descricao">{{laboratorio.descricao}}</p>
+        </a>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<section class="title"> 
+    <h2>Notícias</h2> 
+</section>
+<section class="post container">
+    {% for noticia in noticias %}
+<div class="post-box">
+  <img class="post-img" src="../../static/portfolio/images/{{ noticia.imagem }}" alt="">
+<a href="{{ noticia.link}}" class="post-title">{{ noticia.titulo }}</a>
+<p class="post-description">{{ noticia.descricao }}</p>
+</div>
+
+{% endfor %}
+</section>
+
+<section class="title"> 
+    <h2>Quizz</h2> 
+</section>
+
+<form action="quizz" method="post">
+    {% csrf_token %}
+    <label for="fname">Nome:</label><br>
+  <input type="text" id="nome" name="nome" value="nome"><br>
+  <label for="lname">Apelido:</label><br>
+  <input type="text" id="apelido" name="apelido" value="apelido"><br><br>
+    <label for="pergunta1">Pergunta 1</label><br>
+    <input type="text" id="resposta1" name="resposta1" value="resposta1"><br>
+    <label for="pergunta2">Pergunta 2</label><br>
+    <input type="text" id="resposta2" name="resposta2" value="resposta2"><br><br>
+    <label for="pergunta3">Pergunta 3</label><br>
+    <input type="text" id="resposta3" name="resposta3" value="resposta3"><br>
+    <label for="pergunta4">Pergunta 4</label><br>
+    <input type="text" id="resposta4" name="resposta4" value="resposta4"><br><br>
+    <input type="submit" value="Submit">
+</form>
+
+{% load static %} 
+    <img src="{% static 'portfolio/images/grafico.png' %}">
+
+{% endblock %}

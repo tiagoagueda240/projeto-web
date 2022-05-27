@@ -1,0 +1,35 @@
+{% extends 'portfolio/layout.html' %}
+
+{% block main %}
+<section class="hero-home">
+   <div class="conteudo">
+      <h4>OLÁ! CHAMO-ME</h4>
+      <h2>Tiago Águeda</h2>
+      <p>Think about things differently</p>
+      <div class="download-cv">
+         <a href="#saber-mais" class="theme-btn btn-style-one"><span class="btn-title">Saber Mais</span></a>
+     </div>
+   </div>
+   <div class="imagem">
+      {% load static %}
+      <img src="{% static 'portfolio/images/banner-img.png' %}">
+   </div>
+</section>
+<section class="more-info-home" id="saber-mais">
+   <div class="geral">
+      <div class="imagem">
+         {% load static %}
+         <img src="https://tiagoagueda.pt/images/resource/IMG-20190331-WA0012-01.jpeg">
+      </div>
+      <div class="conteudo">
+         <h4>Quem Sou</h4>
+         <p>Frequento a Licenciatura de <span class="theme_color">Engenharia Informática</span> na Universidade Lusófona de Humanidade e Tecnologias e atualmente exerço funções de <span class="theme_color">desenvolvedor web</span> na agência DigitalXperience. <br> Nos meus tempos livres trabalho como freelance e tiro cursos relacionados com a área na Udemy. <br> A criação deste website, deve-se ao facto de poder acompanhar e realizar projetos inovadores, dinâmicos e interativos, demonstrando-lhe que tudo está ao seu alcance.</p>
+         <!--<div class="download-cv">
+            <a href="#saber-mais" class="theme-btn btn-style-one"><span class="btn-title">Saber Mais</span></a>
+        </div>-->
+      </div>
+   </div>
+   
+</section>
+    
+{% endblock %}
