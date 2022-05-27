@@ -75,8 +75,12 @@
     <div class="caixa">
         <h2 class="titulo">{{competencia.titulo}}</h2>
         <h5 class="descricao">{{competencia.descricao}}</h5>
+        {% for projeto in competencia.projetos %}
         <h5 class="projetos">{{competencia.projetos}}</h5>
+        {% endfor %}
+        {% if competencia.disciplinas is not None %}
         <span class="disciplinas">{{competencia.disciplinas}}</span>
+        {% endif %}
     </div>
     {% endfor %}
 </section>
