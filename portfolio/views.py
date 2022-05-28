@@ -2,7 +2,6 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
-import matplotlib 
 from matplotlib import pyplot as plt
 
 from .models import *
