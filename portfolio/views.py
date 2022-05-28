@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
-from matplotlib import pyplot as plt
+#from matplotlib import pyplot as plt
 
 from .models import *
 from .forms import PostForm
@@ -92,8 +92,8 @@ def desenha_grafico_resultados():
     for pt in participantes:         
         nomes.append(pt.nome +" "+pt.apelido)         
         pontuacoes.append(pt.pontuacao)     
-        plt.barh(nomes, pontuacoes)     
-        plt.savefig("portfolio/static/portfolio/images/grafico.png", bbox_inches='tight')
+        #plt.barh(nomes, pontuacoes)     
+        #plt.savefig("portfolio/static/portfolio/images/grafico.png", bbox_inches='tight')
 
 def quizz(request):
     if request.method == 'POST':
