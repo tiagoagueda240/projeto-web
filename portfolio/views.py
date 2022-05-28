@@ -95,6 +95,7 @@ def desenha_grafico_resultados():
         #plt.barh(nomes, pontuacoes)     
         #plt.savefig("portfolio/static/portfolio/images/grafico.png", bbox_inches='tight')
 
+
 def quizz(request):
     if request.method == 'POST':
         n = request.POST['nome']
