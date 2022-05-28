@@ -33,8 +33,6 @@ SECRET_KEY = env.str("SECRET_KEY")
 
 ALLOWED_HOSTS = ['.herokuapp.com', 'localhost', '127.0.0.1']
 
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-
 
 
 MEDIA_URL = '/porfolio/'
