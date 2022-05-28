@@ -423,7 +423,6 @@ body {
 	grid-template-columns: repeat(auto-fit, minmax(280px, 500px));
 	justify-content: center;
 	gap: 1.5rem;
-	padding: 0 10%;
 	margin-top: 50px;
 }
 
