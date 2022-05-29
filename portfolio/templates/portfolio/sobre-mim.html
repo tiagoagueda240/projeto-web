@@ -59,7 +59,7 @@
 <section class="about-section">
     {% for curso in educacao %}
     <div class="caixa">
-        <img src="../../static/portfolio/images/{{curso.imagem}}" alt="" width="80">
+        <img src="{{curso.imagem.url }}" alt="" width="80">
         <h2 class="curso">{{curso.curso}}</h2>
         <h4 class="local">{{curso.local}}</h4>
         <span class="data">{{curso.inicio}} - {{curso.fim}}</span>
@@ -100,7 +100,7 @@
     {% for interesse in interesses %}
     <div class="caixa">
         <a href="{{cadeira.link}}">
-        <img src="../../static/portfolio/images/{{interesse.imagem}}" alt="" width="80">
+        <img src="{{interesse.imagem.url}}" alt="" width="80">
         <h2 class="titulo">{{interesse.titulo}}</h2>
         <p class="descricao">{{interesse.descricao}}</p>
         <h5 class="nivel">{{interesse.nivel}}</h5>

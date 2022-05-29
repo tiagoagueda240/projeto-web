@@ -11,7 +11,7 @@
 <section class="post container">
     {% for projeto in projetos %}
 <div class="post-box">
-  <img class="post-img" src="../../static/portfolio/images/{{ projeto.imagem }}" alt="">
+  <img class="post-img" src="{{ projeto.imagem.url }}" alt="">
 <!-- <h2 class="category">{{ projeto.autor }}</h2> -->
 <a href="{{ post.link}}" class="post-title">{{ projeto.titulo }}</a>
 <span class="post-date">{{ projeto.ano }}</span>

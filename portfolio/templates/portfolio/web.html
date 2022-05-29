@@ -15,7 +15,7 @@
     <div class="conteudos-tecnologias">
         {% for tecnologia in tecnologias %}
         <div class="tecnologia"><a href="{{tecnologia.link}}">
-            <img src="../../static/portfolio/images/{{tecnologia.logo}}" alt="" width="100">
+            <img src="{{tecnologia.logo.url}}" alt="" width="100">
             <h4 class="nome">{{tecnologia.acronimo}}<br>{{tecnologia.nome}}</h4>
             <span class="ano">{{tecnologia.ano}}</span>
             <span class="criador">{{tecnologia.criador}}</span>
@@ -47,7 +47,7 @@
 <section class="post container">
     {% for noticia in noticias %}
 <div class="post-box">
-  <img class="post-img" src="../../static/portfolio/images/{{ noticia.imagem }}" alt="">
+  <img class="post-img" src="{{ noticia.imagem.url }}" alt="">
 <a href="{{ noticia.link}}" class="post-title">{{ noticia.titulo }}</a>
 <p class="post-description">{{ noticia.descricao }}</p>
 </div>
