@@ -9,19 +9,19 @@
     </section>
 
     
-        <section class="post container">
-           	        {% for post in posts %}
-                   <div class="post-box">
-                     <img class="post-img" src="{{ post.imagem.url }}" alt="">
-           <h2 class="category">{{ post.autor }}</h2>
-             <a href="{{ post.link}}" class="post-title">{{ post.titulo }}</a>
-            <span class="post-date">{{ post.data}}</span>
-            <p class="post-description">{{ post.descricao }}</p>
-            <a href="{% url 'portfolio:editar' post.id %}" class="btn btn-warning  btn-sm" style="float: right; margin-right: 10px">Editar</a>
-            </div>
-        
-            {% endfor %}
+    <section class="post-comment container">
+        {% for post in posts %}
+        <div class="post-box-comment">
+            <img class="post-img-comment" src="{{ post.imagem.url }}" alt="" />
+            <a href="{{ post.link}}" class="post-title-comment">{{ post.titulo }}</a>
+            <h2 class="category-comment">{{ post.autor }}</h2>
+            <span class="post-date-comment">{{ post.data}}</span>
+            <p class="post-description-comment">{{ post.descricao }}</p>
+            <a href="{% url 'portfolio:editar' post.id %}" class="btn btn-warning btn-sm" style="float: right; margin-right: 10px;">Editar</a>
+        </div>
+        {% endfor %}
     </section>
+
     <a href="{% url 'portfolio:criar' %}" class="btn btn-success btn-block">+ Nova Tarefa</a>
     
 {% endblock %}
