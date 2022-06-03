@@ -167,7 +167,7 @@ class Noticia(models.Model):
 
 
 class Tfc(models.Model):
-    autor = models.ManyToManyField(Pessoa, on_delete = models.CASCADE, related_name = "autor")
+    autor = models.ManyToManyField(Pessoa, on_delete = models.CASCADE, related_name = "autorTFC")
     orientadores = models.ManyToManyField(Pessoa, related_name='orientadores')
     ano = models.IntegerField(default=2021)
     titulo = models.CharField(max_length=50)
