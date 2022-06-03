@@ -164,3 +164,18 @@ class Noticia(models.Model):
 
     def __str__(self):
         return self.titulo[:50]
+
+
+class Tfc(models.Model):
+    autor = models.ManyToManyField(Pessoa, on_delete = models.CASCADE, related_name = "autor")
+    orientadores = models.ManyToManyField(Pessoa, related_name='orientadores')
+    ano = models.IntegerField(default=2021)
+    titulo = models.CharField(max_length=50)
+    resumo = models.CharField(max_length=1000)
+    imagem = models.ImageField()
+    relatorio = models.CharField(max_length=1000)
+    linkGithub = models.CharField(max_length=1000)
+    video = models.CharField(max_length=1000)
+
+    def __str__(self):
+        return self.titulo[:50]
